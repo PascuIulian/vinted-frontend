@@ -7,6 +7,7 @@ const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -31,6 +32,8 @@ const Signup = ({ handleToken }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setErrorMessage("");
+
     try {
       const response = await axios.post(
         "https://site--backend-vinted-project--qq6svdx7d7wt.code.run/user/signup",
@@ -41,10 +44,20 @@ const Signup = ({ handleToken }) => {
           newsletter: newsletter,
         }
       );
-      handleToken(response.data.token);
-      navigate("/");
+
+      if (response.data.token) {
+        handleToken(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
+      if (error.response.status === 409) {
+        setErrorMessage(
+          "Cet email est déjà utilisé, veuillez en choisir un autre :)"
+        );
+      } else if (error.response.data.message === "Missing parameters") {
+        setErrorMessage("Veuillez remplir tous les champs :)");
+      }
     }
   };
 
@@ -92,6 +105,7 @@ const Signup = ({ handleToken }) => {
           </p>
           <input type="submit" value="S'inscrire" className="button-form" />
         </form>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <Link to="/login" className="green">
           Tu as déjà un compte ? Connecte-toi !
         </Link>

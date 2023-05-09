@@ -47,7 +47,19 @@ const Publish = ({ token }) => {
 
   return (
     <div className="container publish">
-      <h1>Vends ton article</h1>
+      <h1
+        style={{
+          fontSize: "32px",
+          border: "2px solid",
+          width: "265px",
+          borderRadius: "10px",
+          padding: "10px",
+          marginBottom: "10px",
+        }}
+        className="green"
+      >
+        Vends ton article
+      </h1>
       <form onSubmit={handleSubmit}>
         <div className="file-div publish-form">
           <input
@@ -59,10 +71,9 @@ const Publish = ({ token }) => {
         </div>
 
         <div className="first-div publish-form">
-          <p className="publish-titre">Titre</p>
           <input
             type="text"
-            placeholder="ex: Chemise Sézane verte"
+            placeholder="Titre ex:Chemise Sézane verte"
             value={titre}
             onChange={(event) => {
               setTitre(event.target.value);
@@ -71,7 +82,7 @@ const Publish = ({ token }) => {
           ></input>
           <input
             type="text"
-            placeholder="ex: porté quelquefois, taille correctement
+            placeholder="Description ex: porté quelquefois, taille correctement
             "
             value={description}
             onChange={(event) => {
@@ -83,7 +94,7 @@ const Publish = ({ token }) => {
         <div className="second-div publish-form">
           <input
             type="text"
-            placeholder="ex: Zara"
+            placeholder="Marque ex: Zara"
             value={marque}
             onChange={(event) => {
               setMarque(event.target.value);
@@ -92,7 +103,7 @@ const Publish = ({ token }) => {
           ></input>
           <input
             type="text"
-            placeholder="ex: L / 40 / 12"
+            placeholder="Taille ex: L / 40 / 12"
             value={taille}
             onChange={(event) => {
               setTaille(event.target.value);
@@ -101,7 +112,7 @@ const Publish = ({ token }) => {
           ></input>
           <input
             type="text"
-            placeholder="ex: Rouge"
+            placeholder="Couleur ex: Rouge"
             value={couleur}
             onChange={(event) => {
               setCouleur(event.target.value);
@@ -110,7 +121,7 @@ const Publish = ({ token }) => {
           ></input>
           <input
             type="text"
-            placeholder="ex: Neuf avec étiquette"
+            placeholder="Etat ex: Neuf avec étiquette"
             value={etat}
             onChange={(event) => {
               setEtat(event.target.value);
@@ -119,7 +130,7 @@ const Publish = ({ token }) => {
           ></input>
           <input
             type="text"
-            placeholder="ex: Paris"
+            placeholder="Lieu ex: Paris"
             value={lieu}
             onChange={(event) => {
               setLieu(event.target.value);

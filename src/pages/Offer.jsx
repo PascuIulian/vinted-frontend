@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Offer = () => {
   const [data, setData] = useState({});
@@ -32,9 +33,6 @@ const Offer = () => {
         <span className="offer-price">{data.product_price} €</span>
         {data.product_details.map((detail, index) => {
           const keyName = Object.keys(detail);
-          console.log(detail);
-          console.log(keyName);
-          console.log(detail[keyName[0]]);
           return (
             <div key={index} className="single-details">
               <span>{keyName} :</span>
@@ -53,6 +51,9 @@ const Offer = () => {
           )}
           <span>{data.owner.account.username}</span>
         </div>
+        <Link to="/payment">
+          <button className="acheter">Acheter</button>
+        </Link>
       </div>
     </div>
   );

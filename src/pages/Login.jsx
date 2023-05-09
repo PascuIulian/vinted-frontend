@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -32,6 +33,7 @@ const Login = ({ handleToken }) => {
       navigate("/");
     } catch (error) {
       console.log(error);
+      setErrorMessage("Email ou mot de passe incorrect");
     }
   };
 
@@ -56,6 +58,7 @@ const Login = ({ handleToken }) => {
           className="fill"
         />
         <input type="submit" value="Se connecter" className="button-form" />
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <Link to="/singup" className="green">
           Pas encore de compte ? Inscris-toi !
         </Link>

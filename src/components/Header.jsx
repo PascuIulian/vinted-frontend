@@ -8,6 +8,7 @@ const Header = ({ handleToken, token, search, setSearch, sort, setSort }) => {
         <img src={logo} alt="Vinted logo" />
       </Link>
       <div>
+        <span>Tirer par prix:</span>
         <button
           className={sort === "price-asc" ? "blue" : "white"}
           onClick={() => {

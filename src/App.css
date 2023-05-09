@@ -16,7 +16,7 @@ header {
 }
 
 header .search {
-  width: 630px;
+  width: 530px;
   height: 40px;
   border: none;
   border-radius: 5px;
@@ -94,7 +94,7 @@ header img {
 
 .single-details {
   display: flex;
-  justify-content: space-evenly;
+  gap: 50px;
 }
 
 .second-detail {
@@ -259,13 +259,34 @@ form {
 .submit {
   cursor: pointer;
   display: flex;
-  justify-content: right;
+  width: 120px;
+  margin-left: calc(100% - 120px);
+  height: 40px;
+  background-color: #2cb1ba;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
 }
 
 .blue {
-  background-color: blue;
+  background-color: #2cb1ba;
 }
 
 .white {
   background-color: white;
+}
+
+.acheter {
+  height: 50px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2cb1ba;
+  color: white;
+  margin-top: 50px;
+  margin-left: calc(100% - 100px);
+  border-radius: 10px;
+  font-size: 19px;
 }
