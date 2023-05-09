@@ -34,7 +34,7 @@ const Offer = () => {
           const keyName = Object.keys(detail);
           console.log(detail);
           console.log(keyName);
-          console.log(Object.value(detail.keyName));
+          console.log(detail.keyName);
           return (
             <div key={index} className="single-details">
               <span>{keyName} :</span>
