@@ -94,6 +94,7 @@ header img {
 
 .single-details {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .second-detail {
