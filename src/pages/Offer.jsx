@@ -38,7 +38,6 @@ const Offer = () => {
           return (
             <div key={index} className="single-details">
               <span>{keyName} :</span>
-              <span>{detail.keyName[0]}</span>
             </div>
           );
         })}
