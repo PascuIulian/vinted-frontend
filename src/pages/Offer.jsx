@@ -32,8 +32,7 @@ const Offer = () => {
         <span className="offer-price">{data.product_price} €</span>
         {data.product_details.map((detail, index) => {
           const keyName = Object.keys(detail);
-          console.log(detail);
-          console.log(keyName);
+          console.log(detail.keyName);
           return (
             <div key={index} className="single-details">
               <span>{keyName} :</span>
