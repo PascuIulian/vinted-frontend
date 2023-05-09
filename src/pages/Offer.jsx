@@ -31,14 +31,14 @@ const Offer = () => {
       <div className="offer-details">
         <span className="offer-price">{data.product_price} €</span>
         {data.product_details.map((detail, index) => {
-          const keyName = Object.keys(detail)[0];
+          const keyName = Object.keys(detail);
           console.log(detail);
           console.log(keyName);
-          console.log(detail[keyName]);
+          console.log(detail[keyName[0]]);
           return (
             <div key={index} className="single-details">
               <span>{keyName} :</span>
-              <span>{detail[keyName]}</span>
+              <span>{detail[keyName[0]]}</span>
             </div>
           );
         })}
